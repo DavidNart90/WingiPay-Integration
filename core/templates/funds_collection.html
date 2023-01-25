@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "container">
+    <div class = "d-flex row justify-content-center align-items-center py-md-5 py-3" style = "min-height: 90vh;">
+        <div class = "col-12">
+            <h3 class = "text-center">Make Payment</h3>
+            <hr>
+            <form method="post" action="{% url 'funds_collection' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                <label for="full_name">Full Name: (*)</label>
+                <input type="text" class="form-control"  name="full_name" id="full_name" required>
+                </div>
+
+                <div class="mb-3">
+                <label for="email">Email: (*)</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="amount">Amount: (*)</label>
+                    <input type="number"  min="0" class="form-control" name="amount" id="amount" step="0.01" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="country">Select Country</label> <br>
+                    <select class="selectpicker countrypicker"  class="form-control" data-flag="true" data-default="GH" required></select>
+                </div>
+
+                <input type="hidden" name="transaction_ref" id="transaction_ref" value="{{transaction_ref}}" >
+                <input type="submit" value="Submit" class = "btn btn-primary">             
+            </form>
+        </div>
+    
+    </div
+        
+</div>
+
+{%endblock content %}
+
+
