@@ -1,6 +1,6 @@
 # WingiPay Integration
 
-Wingipay Merchant Api is an The APIs enable collection of funds either via mobile money or credit and debit cards. 
+Wingipay Merchant Api is a payment api for all payments in Africa. The APIs enable collection of funds either via mobile money or credit and debit cards. 
 
 Requirements:
 
